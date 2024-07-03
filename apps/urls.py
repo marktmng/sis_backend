@@ -11,11 +11,13 @@ router = DefaultRouter()
 # router.register(r'parent', ParentViewSet, 'parent')
 # router.register(r'tuitionfee', TuitionFeeViewSet, 'tuitionfee')
 
+# or
+
 router = DefaultRouter()
-router.register('student', StudentViewSet, basename='student')
-router.register('studentmark', studentMarkViewSet, basename='studentmark')
 router.register('program', ProgramViewSet, basename='program')
 router.register('lecturer', LecturerViewSet, basename='lecturer')
+router.register('student', StudentViewSet, basename='student')
+router.register('studentmark', studentMarkViewSet, basename='studentmark')
 router.register('parent', ParentViewSet, basename='parent')
 router.register('tuitionfee', TuitionFeeViewSet, basename='tuitionfee')
 
