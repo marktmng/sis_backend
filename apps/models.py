@@ -13,6 +13,7 @@ class Program(models.Model):
 class Lecturer(models.Model):
     name = models.CharField(max_length=100)  # Name of the lecturer
     email = models.EmailField(unique=True)  # Email of the lecturer, must be unique
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, related_name='lecturers')  # Program the lecturer is associated with
 
     def __str__(self):
         return self.name  # String representation of the lecturer
