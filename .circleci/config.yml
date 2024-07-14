@@ -1,31 +1,22 @@
 version: 2.1
 
 jobs:
-  test:
+  test-and-lint:
     docker:
-      - image: circleci/python:3.9  # Ensure this matches the version compatible with your Django version
+      - image: cimg/python:3.10.1
     steps:
       - checkout
       - run:
-          name: Install dependencies
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt
+          name: install dependencies
+          command: pip install -r requirements.txt
       - run:
-          name: Run tests
-          command: |
-            . venv/bin/activate
-            python manage.py test
+          name: run tests
+          command: python manage.py test
 
 workflows:
-  version: 2
-  test:
+  build-and-test-workflow:
     jobs:
-      - test
-
-
+      - test-and-lint
 
 
 # # This config was automatically generated from your source code
