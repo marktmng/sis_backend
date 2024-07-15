@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework', # added
     'apps', # added app before make migrations
     # 'corsheaders', ## added
+    'rest_framework.authtoken', # for authtoken
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny', # replaced AllowAny from IsAuthenticated
+    ]
+}
+
+CORS_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
