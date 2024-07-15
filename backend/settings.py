@@ -88,22 +88,9 @@ WSGI_APPLICATION = 'backend.wsgi.app' # added app name
 #     }
 # }
 
-DATABASES = { # added from vercel storage
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'me1PM2VhfJzy',
-        'HOST': 'ep-late-hall-a4zyaksa.us-east-1.aws.neon.tech',
-        'PORT': '5432',
-    }
-}
-
-# settings.py
-
-# DATABASES = {
+# DATABASES = { # added from vercel storage
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
+#         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': 'verceldb',
 #         'USER': 'default',
 #         'PASSWORD': 'me1PM2VhfJzy',
@@ -111,6 +98,19 @@ DATABASES = { # added from vercel storage
 #         'PORT': '5432',
 #     }
 # }
+
+# # settings.py
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'fqP7mt1iQZeV',
+        'HOST': 'ep-odd-leaf-a4lihym7.us-east-1.aws.neon.tech',
+        'PORT': '5432',
+    }
+}
 
 
 
