@@ -182,5 +182,6 @@ CORS_ALLOW_METHODS = [
 #     'http://localhost:3000',
 # ] # If this is used, then not need to use `CORS_ALLOW_ALL_ORIGINS = True`
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    'http://localhost:3000', 'https://*.vercel.app'
+    'http://localhost:3000',
+    'https://sis-frontend-ten.vercel.app/'
 ]
