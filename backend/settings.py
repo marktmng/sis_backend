@@ -89,17 +89,6 @@ WSGI_APPLICATION = 'backend.wsgi.app' # added app name
 #     }
 # }
 
-# DATABASES = { # added from vercel storage
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'verceldb',
-#         'USER': 'default',
-#         'PASSWORD': 'me1PM2VhfJzy',
-#         'HOST': 'ep-late-hall-a4zyaksa.us-east-1.aws.neon.tech',
-#         'PORT': '5432',
-#     }
-# }
-
 # # settings.py
 
 DATABASES = {
@@ -176,15 +165,22 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-#  added cors headers
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
+# #  added cors headers
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+# ]
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+# ] # If this is used, then not need to use `CORS_ALLOW_ALL_ORIGINS = True`
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    'http://localhost:3000', 'https://*.vercel.app'
 ]
