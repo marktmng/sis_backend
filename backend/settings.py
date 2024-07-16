@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', ## added
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -176,6 +176,7 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
+#  added cors headers
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
