@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-1d-^cr+5o*_1r)95bqeghqi-q120au5^1k)!b1)nu&r7h#@@r&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://sis-backend-ten.vercel.app/",  # frontend domain
+]
+    
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'localhost'] # added to allow vercel
 
 
@@ -174,4 +179,16 @@ CORS_ALLOW_METHODS = [
     'PATCH',
     'POST',
     'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
