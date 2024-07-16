@@ -57,3 +57,13 @@ class TuitionFee(models.Model):
 
     def __str__(self):
         return f'{self.student.name} - {self.amount}'  # String representation of the tuition fee
+    
+class Registration(models.Model):
+    name = models.CharField(max_length=100)  # Name of the student
+    email = models.EmailField(unique=True)  # Email of the student, must be unique
+    username = models.CharField(max_length=100)  # Username of the student
+    passworrd = models.CharField(max_length=100)  # Password of the student
+    program = models.ForeignKey(Program, on_delete=models.CASCADE)  # Program the student is enrolled in
+
+    def __str__(self):
+        return self.name

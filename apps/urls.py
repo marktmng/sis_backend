@@ -1,17 +1,9 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 from apps.viewsets import StudentViewSet, studentMarkViewSet, ProgramViewSet, LecturerViewSet, ParentViewSet, TuitionFeeViewSet
+from apps.views import RegistrationView
 
 router = DefaultRouter()
-
-# router.register(r'student', StudentViewSet, 'student')
-# router.register(r'studentmark', studentMarkViewSet, 'studentmark')
-# router.register(r'program', ProgramViewSet, 'program')
-# router.register(r'lecturer', LecturerViewSet, 'lecturer')
-# router.register(r'parent', ParentViewSet, 'parent')
-# router.register(r'tuitionfee', TuitionFeeViewSet, 'tuitionfee')
-
-# or
 
 router = DefaultRouter()
 router.register('program', ProgramViewSet, basename='program')
@@ -20,6 +12,7 @@ router.register('student', StudentViewSet, basename='student')
 router.register('studentmark', studentMarkViewSet, basename='studentmark')
 router.register('parent', ParentViewSet, basename='parent')
 router.register('tuitionfee', TuitionFeeViewSet, basename='tuitionfee')
+router.register('registration', RegistrationView, basename='registration')
 
 urlpatterns = router.urls
 
