@@ -165,23 +165,23 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-# #  added cors headers
-# CORS_ALLOW_HEADERS = [
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-# ]
+#  added cors headers
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:3000',
 # ] # If this is used, then not need to use `CORS_ALLOW_ALL_ORIGINS = True`
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    'http://localhost:3000',
-    'https://sis-frontend-ten.vercel.app/'
+    'http://localhost:3000', # 'https://*.vercel.app'
+    'https://sis-backend-ten.vercel.app/'
 ]
