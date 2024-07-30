@@ -24,6 +24,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)  # Name of the student
     email = models.EmailField(unique=True)  # Email of the student, must be unique
     program = models.ForeignKey(Program, on_delete=models.CASCADE)  # Program the student is enrolled in
+    status = models.CharField(max_length=10, default='N/A')  # Status of the student's mark
 
     def __str__(self):
         return self.name  # String representation of the student
@@ -34,10 +35,18 @@ class StudentMark(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)  # Reference to the student
     course = models.CharField(max_length=100)  # Name of the course
     mark = models.IntegerField()  # Mark obtained by the student
-
+    # status = models.CharField(max_length=10, default='N/A')  # Status of the student's mark
+    #
+    # def save(self, *args, **kwargs):
+    #     if self.mark >= 75:
+    #         self.status = "Passed"
+    #     else:
+    #         self.status = "Failed"
+    #     super().save(*args, **kwargs)     ##Mark may use in the future --Jean
 
     def __str__(self):
-        return f'{self.student.name} - {self.course}'  # String representation of the student's mark
+        return f'{self.student.name} - {self.course} ({self.status})'  # String representation of the student's mark
+
 
 
 # Parent model to store information about parents of students
