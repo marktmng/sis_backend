@@ -35,6 +35,7 @@ class StudentMark(models.Model):
     course = models.CharField(max_length=100)  # Name of the course
     mark = models.IntegerField()  # Mark obtained by the student
 
+
     def __str__(self):
         return f'{self.student.name} - {self.course}'  # String representation of the student's mark
 
