@@ -15,7 +15,7 @@ class LecturerSerializer(serializers.ModelSerializer):
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ['id', 'name', 'email', 'program']
+        fields = ['id', 'name', 'email', 'program', 'status']
         
 class StudentMarkSerializer(serializers.ModelSerializer):
     class Meta:
